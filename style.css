@@ -1,5 +1,5 @@
 /* Begin of Section for visualization purposes
-It can be deleted */
+It can be deleted upon implementation */
 
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
@@ -37,16 +37,13 @@ button {
   font: inherit;
 }
 
-.rating-component h1 {
-  font-size: 1.825em;
-}
-
 .rating-component {
-  min-height: 22em;
-  font-family: 'Overpass', sans-serif;
+  position: relative;
   font-size: 1rem;
+  width: min(87%, 25em);
+  height: 26em;
+  font-family: 'Overpass', sans-serif;
   line-height: 1.5em;
-  width: min(85%, 25em);
   margin-inline: auto;
 }
 
@@ -54,13 +51,13 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 2em;
   padding: 1.8em;
   height: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    hsl(215, 20%, 16%),
-    hsl(215, 27%, 12%)
+  background-color: var(--clr-rating-very-dark-blue);
+  background-image: radial-gradient(
+    circle at top,
+    rgba(37, 45, 55, 0.9),
+    rgba(37, 45, 55, 0.4)
   );
   border-radius: 2em;
   box-shadow: 0px 10px 25px hsl(216, 12%, 7%);
@@ -68,17 +65,16 @@ button {
 }
 
 .rating-component #rating img {
-  display: block;
-  width: 3em;
-  height: 3em;
+  object-fit: scale-down;
+  width: 2.8em;
+  height: 2.8em;
   background-color: var(--clr-rating-dark-blue);
-  padding: 1em;
   border-radius: 50%;
 }
 
 .rating-component #rating form {
   display: grid;
-  grid-template-rows: 3em 3em;
+  grid-template-rows: 2.8em 2.8em;
   gap: 1.8em;
 }
 
@@ -94,15 +90,15 @@ button {
   position: relative;
 }
 
-.rating-component #rating form .select-rating label input {
+.rating-component #rating form .select-rating .rating-star input {
   width: 100%;
   height: 100%;
   appearance: none;
   border-radius: 50%;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
-.rating-component #rating form .select-rating label span {
+.rating-component #rating form .select-rating .rating-star span {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -118,12 +114,18 @@ button {
   font-weight: var(--fw-700);
 }
 
-.rating-component #rating form .select-rating label input:hover + span {
+.rating-component #rating form .select-rating .rating-star input:hover + span {
   background-color: var(--clr-rating-light-grey);
   color: var(--clr-rating-white);
 }
 
-.rating-component #rating form .select-rating label input:checked + span {
+.rating-component
+  #rating
+  form
+  .select-rating
+  .rating-star
+  input:checked
+  + span {
   background-color: var(--clr-rating-orange);
   color: var(--clr-rating-white);
 }
@@ -144,6 +146,54 @@ button {
   color: var(--clr-rating-orange);
 }
 
-.rating-component #thank-you {
+.rating-component #rating {
   display: none;
+}
+
+.rating-component #thank-you {
+  /* display: none; */
+  /* opacity: 0.8; */
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  text-align: center;
+  align-items: center;
+  padding: 2.4em 1.8em;
+}
+
+.rating-component #thank-you img {
+  object-fit: contain;
+  width: 55%;
+  margin-inline: auto;
+}
+
+.rating-component .state .message h1 {
+  font-size: 1.825em;
+  font-weight: var(--fw-700);
+  color: var(--clr-rating-white);
+  margin-bottom: 0.7em;
+}
+
+.rating-component .state .message p {
+  font-size: 0.9em;
+  font-weight: var(--fw-400);
+  color: var(--clr-rating-light-grey);
+}
+
+.rating-component #thank-you > p {
+  color: var(--clr-rating-orange);
+  background-color: var(--clr-rating-dark-blue);
+  border-radius: 2.5em;
+  padding: 0.5em 1em;
+}
+
+@media only screen and (min-width: 376px) {
+  .rating-component #rating form {
+    grid-template-rows: 3.2em 3.2em;
+  }
+
+  .rating-component #rating img {
+    width: 3.2em;
+    height: 3.2em;
+  }
 }
