@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Interactive animated rating component</title>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: fixed;
+      bottom: 1rem;
+      width: 100%;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Rating state start -->
+  <div class="rating-component">
+    <div class="state" id="rating">
+      <img src="./images/icon-star.svg" alt="Your rating">
+      <h1>How did we do?</h1>
+      <p>
+        Please let us know how we did with your support request. All feedback is appreciated
+        to help us improve our offering!
+      </p>
+      <form action="submit" class="rating-form">
+        <div class="select-rating">
+          <label for="1-star"><input type="radio" name="rating" id="1-star" value="1"><span>1</span></label>
+          <label for="2-star"><input type="radio" name="rating" id="2-star" value="2"><span>2</span></label>
+          <label for="3-star"><input type="radio" name="rating" id="3-star" value="3"><span>3</span></label>
+          <label for="4-star"><input type="radio" name="rating" id="4-star" value="4"><span>4</span></label>
+          <label for="5-star"><input type="radio" name="rating" id="5-star" value="5"><span>5</span></label>
+        </div>
+        <button class="btn-submit-rating" type="submit" value="Submit">Submit</button>
+      </form>
+    </div>
+    <div class="state" id="thank-you">
+      <img src="./images/illustration-thank-you.svg">
+      <p>You selected<span class="selected-rating">3</span>out of 5</p>
+      <h1>Thank you!</h1>
+      <p>
+        We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+      </p>
+    </div>
+  </div>
+
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+
+
+
+  <!-- Thank you state end -->
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/teraenas">Mihai Dragan</a>.
+  </div>
+</body>
+
+</html>
